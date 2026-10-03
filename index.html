@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>HTML 运行器 · 把网页装进手机</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+      -webkit-tap-highlight-color: transparent; }
+  body { background: #f5f7fb; color: #1e293b; line-height: 1.6;
+         min-height: 100vh; display: flex; justify-content: center;
+         padding: 24px 16px 60px; }
+  .container { width: 100%; max-width: 680px; }
+
+  .hero { background: #fff; border-radius: 40px; padding: 48px 32px 40px;
+          text-align: center; box-shadow: 0 20px 40px rgba(0,0,0,0.04);
+          margin-bottom: 24px; }
+  .app-icon { width: 96px; height: 96px; border-radius: 28px;
+              background: linear-gradient(135deg, #3b82f6, #60a5fa);
+              display: flex; align-items: center; justify-content: center;
+              font-size: 48px; margin: 0 auto 24px;
+              box-shadow: 0 12px 24px -8px rgba(59,130,246,0.5); }
+  .hero h1 { font-size: 32px; font-weight: 700; color: #0f172a; margin-bottom: 12px; }
+  .hero .sub { font-size: 17px; color: #64748b; margin-bottom: 32px; }
+
+  .download-btn {
+    display: inline-block;
+    background: #3b82f6;
+    color: #fff !important;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    padding: 18px 48px;
+    border-radius: 40px;
+    box-shadow: 0 12px 24px -8px rgba(59,130,246,0.5);
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+  }
+  .download-btn:active { transform: scale(0.97); }
+  .version-tip { margin-top: 16px; font-size: 13px; color: #94a3b8; }
+
+  .card { background: #fff; border-radius: 32px; padding: 32px 28px;
+          box-shadow: 0 12px 30px rgba(0,0,0,0.03); margin-bottom: 20px; }
+  .card h2 { font-size: 22px; font-weight: 700; margin-bottom: 20px;
+             color: #0f172a; display: flex; align-items: center; gap: 10px; }
+
+  .features { display: flex; flex-direction: column; gap: 16px; }
+  .feature { display: flex; gap: 16px; align-items: flex-start; }
+  .feature .icon { width: 48px; height: 48px; min-width: 48px; border-radius: 18px;
+                   background: #eff6ff; display: flex; align-items: center;
+                   justify-content: center; font-size: 24px; }
+  .feature .text h3 { font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 4px; }
+  .feature .text p { font-size: 14px; color: #64748b; line-height: 1.5; }
+
+  .steps { display: flex; flex-direction: column; gap: 18px; }
+  .step { display: flex; gap: 16px; align-items: flex-start; }
+  .step .num { width: 36px; height: 36px; min-width: 36px; border-radius: 50%;
+               background: #3b82f6; color: #fff; display: flex;
+               align-items: center; justify-content: center;
+               font-weight: 700; font-size: 16px; }
+  .step .content h3 { font-size: 16px; font-weight: 600; color: #0f172a; margin-bottom: 4px; }
+  .step .content p { font-size: 14px; color: #64748b; line-height: 1.5; }
+
+  .faq-item { border-bottom: 1px solid #f1f5f9; padding: 16px 0; }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-item h3 { font-size: 15px; font-weight: 600; color: #1e293b; margin-bottom: 6px; }
+  .faq-item p { font-size: 14px; color: #64748b; line-height: 1.6; }
+
+  .footer { text-align: center; padding: 32px 16px 0; font-size: 13px; color: #94a3b8; }
+
+  @media (max-width: 480px) {
+    .hero { padding: 36px 24px 32px; border-radius: 32px; }
+    .hero h1 { font-size: 26px; }
+    .card { padding: 24px 20px; border-radius: 28px; }
+    .card h2 { font-size: 19px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="hero">
+    <div class="app-icon">🌐</div>
+    <h1>HTML 运行器</h1>
+    <p class="sub">把任意 HTML 文件装进手机，随时运行，随时预览</p>
+
+    <!-- ↓↓↓ 就是这个按钮，直接跳蓝奏云，没有任何 JS 拦截 ↓↓↓ -->
+    <a href="https://wwbjj.lanzouc.com/ibzPz4asekif"
+       class="download-btn"
+       target="_blank"
+       rel="noopener">立即下载 APK</a>
+
+    <p class="version-tip">版本 1.0 · 免费 · 无广告 · 3.2MB</p>
+  </div>
+
+  <div class="card">
+    <h2>✨ 核心功能</h2>
+    <div class="features">
+      <div class="feature">
+        <div class="icon">📂</div>
+        <div class="text">
+          <h3>一键导入 HTML</h3>
+          <p>从手机里选择任意 .html 文件，秒速导入，无需配置。</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon">▶️</div>
+        <div class="text">
+          <h3>离线预览运行</h3>
+          <p>导入后点一下预览，内置 WebView 立刻运行你的网页。</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon">🤍</div>
+        <div class="text">
+          <h3>白色圆润简洁界面</h3>
+          <p>无广告、无弹窗、无冗余权限，干净到只有两个按钮。</p>
+        </div>
+      </div>
+      <div class="feature">
+        <div class="icon">🔒</div>
+        <div class="text">
+          <h3>不申请多余权限</h3>
+          <p>使用系统文件选择器读取 HTML，不上传、不联网、不收集隐私。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>🚀 三步就能用</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <div class="content">
+          <h3>打开 App</h3>
+          <p>界面只有一个「导入 HTML 文件」按钮，干净直接。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <div class="content">
+          <h3>选择你的 HTML 文件</h3>
+          <p>系统文件选择器会弹出，挑一个 .html 文件即可。</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <div class="content">
+          <h3>点「预览」运行</h3>
+          <p>下方的预览按钮点亮，点一下就能看到网页跑起来。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>❓ 常见问题</h2>
+    <div class="faq-item">
+      <h3>支持哪些 HTML 文件？</h3>
+      <p>只要后缀是 .html 或 .htm 的文件都可以导入，内部 CSS、JavaScript 都能正常运行。</p>
+    </div>
+    <div class="faq-item">
+      <h3>需要联网吗？</h3>
+      <p>不需要。导入后完全离线运行，App 本身也不联网，没有隐私风险。</p>
+    </div>
+    <div class="faq-item">
+      <h3>怎么下载？</h3>
+      <p>点页面顶部「立即下载 APK」按钮，会跳转到蓝奏云页面，再点一次下载即可。</p>
+    </div>
+  </div>
+
+  <div class="footer">
+    <p>HTML 运行器 · 让网页装进手机</p>
+    <p style="margin-top: 6px;">© 2026 · 免费使用</p>
+  </div>
+
+</div>
+
+<!-- 这里故意不放任何 <script>，就不会有东西拦截跳转了 -->
+
+</body>
+</html>
